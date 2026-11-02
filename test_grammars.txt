@@ -1,6 +1,4 @@
 Copy one grammar (and its input) into the web page.
-=====================================================
-
 1) Expression grammar (left recursion)        input: id+id*id        -> ACCEPTED
 E -> E+T | T
 T -> T*F | F
