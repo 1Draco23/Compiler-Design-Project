@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictive Parser Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="container">
+    <header class="h">
+      <div class="e">COMPILER DESIGN TOOL</div>
+      <h1>Predictive Parser Generator</h1>
+      <p>
+      </p>
+    </header>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>1. Grammar</h2>
+          <p>Use one production per line. Separate alternatives with <code>|</code>.</p>
+        </div><button class="secondary" id="exampleBtn" type="button">Load example</button>
+      </div>
+      <label for="grammarInput">Production rules</label>
+      <textarea id="grammarInput" placeholder="Enter Grammer"></textarea>
+      <div class="hint">
+        Use <code>epsilon</code> for an empty production. The first production defines the start symbol.
+      </div>
+      <div id="status" class="status" role="status">Ready. Enter a grammar, then press any step button.</div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>2. Steps</h2>
+          <p>Press any button, in any order. The result appears in the output window below.</p>
+        </div>
+      </div>
+      <div class="step-buttons">
+        <button class="primary step-btn" id="btnLR" type="button">Left Recursion</button>
+        <button class="primary step-btn" id="btnLF" type="button">Left Factoring</button>
+        <button class="primary step-btn" id="btnFirst" type="button">FIRST</button>
+        <button class="primary step-btn" id="btnFollow" type="button">FOLLOW</button>
+        <button class="primary step-btn" id="btnTable" type="button">Parsing Table</button>
+      </div>
+    </section>
+
+    <section class="panel output-panel">
+      <div class="section-heading">
+        <div>
+          <h2 id="outTitle">Output</h2>
+          <p>Shows the result of the button you pressed last.</p>
+        </div>
+      </div>
+      <pre id="output"></pre>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h2>3. Input string</h2>
+          <p>Enter a string and press Parse String.</p>
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="input-group"><label for="testInput">Input string to parse</label><input id="testInput" type="text"
+            placeholder="Input String To Parse"></div>
+        <button id="btnParse" class="primary" type="button">Parse String <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

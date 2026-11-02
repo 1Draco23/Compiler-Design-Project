@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    background: #f4f6fb;
+    color: #172033;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+p {
+    color: gray;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+textarea,
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 150px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #eeeeee;
+    cursor: pointer;
+}
+
+.primary {
+    background: #3659d9;
+    color: white;
+}
+
+.status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f0f0f0;
+}
+
+.success {
+    background: #d4f5e0;
+    color: green;
+}
+
+.warning {
+    background: #fff3cd;
+    color: #8a6d00;
+}
+
+.error {
+    background: #fde0e0;
+    color: red;
+}
+
+pre {
+    background: #101828;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    overflow: auto;
+    max-height: 500px;
+}
+
+/* step-by-step additions */
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.section-heading h2,
+.section-heading p {
+    margin: 0 0 6px;
+}
+
+.step-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.block-label {
+    font-weight: bold;
+    margin: 14px 0 6px;
+}
+
+.output-panel h2 {
+    margin-top: 0;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-row {
+    align-items: flex-end;
+}
+
+#parseResult pre {
+    margin-top: 0;
+}
+
+
+/* single output window */
+#output {
+    min-height: 120px;
+    margin: 0;
+    white-space: pre;
+}

@@ -1,0 +1,44 @@
+Copy one grammar (and its input) into the web page.
+=====================================================
+
+1) Expression grammar (left recursion)        input: id+id*id        -> ACCEPTED
+E -> E+T | T
+T -> T*F | F
+F -> (E) | id
+
+2) Epsilon productions                        input: aabb            -> ACCEPTED   (try aab -> REJECTED)
+S -> aSb | epsilon
+
+3) Indirect left recursion (not LL(1))        input: bdca            -> conflicts reported
+S -> Aa | b
+A -> Ac | Sd | epsilon
+
+4) Left factoring only                        input: abd             -> ACCEPTED
+A -> abc | abd | ae | f
+
+5) Dangling else (conflict in the table)      input: ibtaea          -> conflict M[S', e]
+S -> iEtS | iEtSeS | a
+E -> b
+
+6) Two rules start the same (conflict)        input: ca              -> conflict M[S, c]
+S -> Aa | Bb
+A -> c
+B -> c
+
+7) Multi-letter terminals (spaced style)      input: num + num * num -> ACCEPTED
+Expr -> Expr + Term | Term
+Term -> Term * Factor | Factor
+Factor -> ( Expr ) | num
+
+8) Both FIRST and FOLLOW use epsilon          input: a a b           -> ACCEPTED
+S -> A B
+A -> a A | epsilon
+B -> b B | epsilon
+
+Strings the expression grammar (1) should REJECT:  id+*id   id+   id id   (id
+Grammars that should give a GRAMMAR ERROR:
+  S a b            (missing ->)
+  s -> a           (left side not a non-terminal)
+  S -> A b         (A never defined)
+  S -> a | | b     (empty alternative)
+  A -> A a         (only left recursion, can never end)
